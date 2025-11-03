@@ -278,6 +278,38 @@
         widget.bind(SC.Widget.Events.FINISH, onTrackEnd); // Fin d'un track
     });
 
+
+// Script to include header/menu
+function includeHTML(elementId, file) {
+	fetch(file)
+	.then(response => {
+		if (!response.ok) throw new Error('File not found: ' + file);
+		return response.text();
+	})
+	.then(data => {
+		document.getElementById(elementId).innerHTML = data;
+	})
+	.catch(err => console.error(err));
+}
+
+includeHTML('header-placeholder', 'header.html');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	})();
 
 })(jQuery);
