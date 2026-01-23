@@ -7,7 +7,7 @@
 <html>
 	<head>
 <!-- ------------------------------------------------------ Update the title --------------------------------------------------->
-		<title>2024_Strasbourg-Paris - Billie&Hugo</title>
+<title>Printed boxes Tech Report - Billie&Hugo</title>
 <!-- ------------------------------------------------------------------------------------------------------------------------ -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -19,6 +19,62 @@
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	</head>
+
+
+
+
+<style>
+
+/* Container PDF */
+.pdf-container {
+    width: 65vw;       /* largeur du viewer */
+    height: 50vw;      /* hauteur du viewer */
+
+    /* positionnement relatif pour décalage depuis le centre */
+    margin: 20px auto; /*centré horizontalement par défaut */
+    position: relative;
+    left: 0%;          /* décalage horizontal par rapport au centre, en % */
+    transform: translateX(0%); /*complément pour décalage précis */
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.controls {
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+</style>
+
+
+
+
+
+
+<body>
+    <script>
+        const container = document.querySelector('.pdf-container');
+        let offset = 12; // en pourcentage
+
+        function move(amount) {
+            offset += amount;
+            container.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+
+<!-- ---------------------------------------------------------------------------------- -->
+
 
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -36,9 +92,9 @@
       </a>
 
       <!-- Back to Menu button just under the logo -->
-      <a href="main_bike_trips.html" id="back-to-menu">
-        <i class="fa-solid fa-arrow-left"></i> Back to Bike trips
-      </a>
+		<a href="main_printedboxes.html" id="back-to-menu">
+			<i class="fa-solid fa-arrow-left"></i> Back to Printed boxes
+		</a>
     </div>
 
     <!-- Nav -->
@@ -55,71 +111,38 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="../../index.html">Home</a></li>
-							<li><a href="../pages/mechanics/main_mechanics.html">Mechanics</a></li>
-							<li><a href="pages/bike_trips/main_bike_trips.html">Bike trips</a></li>
-							<li><a href="../pages/music/main_music.html">Music</a></li>
+							<li><a href="main_mechanics.html">Mechanics</a></li>
+							<li><a href="../bike_trips/main_bike_trips.html">Bike trips</a></li>
+							<li><a href="../music/main_music.html">Music</a></li>
 							<li><a href="pages/music/main_programming.html">Programming</a></li>
 						</ul>
 					</nav> -->
 
-<!-- ----------------------------------- Update the title and level from the root with "../../../" -------------------------- -->
-				<!-- Main -->
-					<div id="main">
-						<div class="inner" style="text-align: center;">
-							<h1>- Strasbourg-Paris, April 2024 -</h1>
-							<h1>(629 km, 6070 D+, 5 days)</h1>
-							<!-- <span class="image main"><img src="../../images/pic13.jpg" alt="" /></span> -->
-							<p>Choose the information you are interested in...</p>
-						</div>
-					</div>
-<!-- -------------------------------------------- BLOCS CREATION ------------------------------------------------------------ -->
-					<div id="main">
-						<div class="inner">
-							<section class="tiles">
-<!-- ------------------------------------------------------------------------------------------ -->
-								<article class="tile">
-									<span class="image">
-										<img src="The_map.png" alt=""
-										style="filter: brightness(0.6);" />
-									</span>
-									<a href="2024_Strasbourg-Paris/index.html">
-										<h2>The map</h2>
-										<div class="content">
-											<p>Click here to see the trip on the map</p>
-										</div>
-									</a>
-								</article>
-<!-- ------------------------------------------------------------------------------------------ -->
-								<article class="tile">
-									<span class="image">
-										<img src="Photos_bike-trips.jpg" alt=""
-										style="filter: brightness(0.6);" />
-									</span>
-									<a href="https://drive.google.com/drive/folders/19aUhGggDIyGmvInM61C4bkawHPUrsXt2?usp=drive_link">
-									<!-- <a href="Photos_2024_Strasbourg-Paris.html"> -->
-										<h2>Photographs</h2>
-										<div class="content">
-											<p>Click here to see some photographs of the trip</p>
-										</div>
-									</a>
-								</article>
-<!-- ------------------------------------------------------------------------------------------ -->
-								<article class="tile">
-									<span class="image">
-										<img src="GPX_download.jpg" alt=""
-										style="filter: brightness(0.6);" />
-									</span>
-									<a href="https://drive.google.com/drive/folders/1RMKv8ADgyClnJ2hvNkbt9EvVYgufqdZz?usp=sharing">
-										<h2>GPX Download</h2>
-										<div class="content">
-											<p>Click here to download the GPX files</p>
-										</div>
-									</a>
-								</article>
-								
+<!-- ------------------------------------------------------------------------------------------- -->
+				
+<!-- Main -->
+<div id="main">
+	<div class="inner">
+		<h1>Pedalboard Technical Report</h1>
 
-							</div>
-					</div>
+		<div class="pdf-container">
+			<!-- ✅ Embedded PDF via iframe -->
+			<iframe src="printed_boxes_report.pdf#toolbar=1&navpanes=0&scrollbar=1&zoom=100"></iframe>
+		</div>
+
+		<!-- Open-in-new-top button -->
+		<div class="controls">
+			<button id="open-pdf" onclick="window.open('printed_boxes_report.pdf', '_blank')">Full screen report (Open in New Tab)</button>
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
 
 
 <hr class="gradient_white">
@@ -164,3 +187,41 @@
 
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
