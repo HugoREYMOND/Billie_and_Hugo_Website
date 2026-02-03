@@ -8,7 +8,7 @@
 
 <head>
 	<!-- ------------------------------------------------------ Update the title --------------------------------------------------->
-	<title>Programming - Billie&Hugo</title>
+	<title>Music - Billie&Hugo</title>
 	<!-- ------------------------------------------------------------------------------------------------------------------------ -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -27,7 +27,6 @@
 	<!-- Wrapper -->
 	<div id="wrapper">
 
-
 		<!-- <header -->
 		<header id="header">
 			<div class="inner">
@@ -44,49 +43,95 @@
 					</a>
 				</div>
 
-
+				<!-- Nav -->
+				<!-- <nav>
+      <ul>
+        <li><a href="#menu"><span></span></a></li>
+      </ul>
+    </nav>
+  </div> -->
 		</header>
 
-		<!-- ----------------------------------- Update the title and level from the root with "../../../" -------------------------- -->
+		<!-- Menu -->
+		<!-- <nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="../../index.html">Home</a></li>
+					<li><a href="../mechanics/main_mechanics.html">Mechanics</a></li>
+					<li><a href="../bike_trips/main_bike_trips.html">Bike trips</a></li>
+					<li><a href="main_music.html">Music</a></li>
+				</ul>
+			</nav> -->
+
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-				<h1>Programming</h1>
-				<!-- <span class="image main"><img src="../../images/pic13.jpg" alt="" /></span> -->
-				<p>Choose codes you are interested in...</p>
-			</div>
-		</div>
-		<!-- -------------------------------------------- BLOCS CREATION ------------------------------------------------------------ -->
-		<div id="main">
-			<div class="inner">
+				<h1>Music</h1>
+
+				<hr class="gradient_blue">
+
+				<div class="audio-title">Listen to all the songs in a random order...</div>
+
+				<!-- 🎵 Music Player -->
+				<div id="music-player">
+					<!-- ✅ Correction : iframe avec source SoundCloud valide -->
+					<iframe id="player" allow="autoplay"
+						src="https://w.soundcloud.com/player/?url=https://soundcloud.com/hugo-reymond/valse-sentimentale&auto_play=false"
+						style="width:100%; max-width:800px; height:180px; border:none;" scrolling="no" frameborder="no">
+					</iframe>
+
+					<div id="music-controls">
+						<button id="prev-track"><i class="fa-solid fa-backward"></i></button>
+						<button id="play-track"><i class="fa-solid fa-play"></i></button>
+						<button id="next-track"><i class="fa-solid fa-forward"></i></button>
+						<!-- <button id="shuffle-track"><i class="fa-solid fa-shuffle"></i></button> -->
+					</div>
+
+					<h3 id="current-track">No track playing</h3>
+				</div>
+
+				<hr class="gradient_blue">
+
+				<div class="audio-title">... or chose what you want to listen!</div>
+
+				<!-- ------------------------------------------------------------------------------------------------- -->
 				<section class="tiles">
-					<!-- ------------------------------------------------------------------------------------------ -->
 					<article class="tile">
 						<span class="image">
-							<img src="programming.jpg" alt="" style="filter: brightness(0.6);" />
+							<img src="BuisHouse_live_session.jpg" alt="" style="filter: brightness(0.6);" />
 						</span>
-						<a
-							href="https://drive.google.com/drive/folders/1_gTJm_tLWPiJtdHQJa7HmMlSO3b22kuF?usp=drive_link">
-							<h2>GPX compilation</h2>
-							<div class="content">
-								<p>Click here to have access to the files</p>
-							</div>
+						<a href="BuisHouse_live_session.html">
+							<h2>The BuisHouse Live Session</h2>
 						</a>
 					</article>
-					<!-- ------------------------------------------------------------------------------------------ -->
+					<!-- ------------------------------------------------------------------------------------------------- -->
+					<article class="tile">
+						<span class="image">
+							<img src="CelloGodin.jpg" alt="" style="filter: brightness(0.6);" />
+						</span>
+						<a href="Cello_Godin.html">
+							<h2>Cello&Godin</h2>
+						</a>
+					</article>
+				</section>
+				<!-- ------------------------------------------------------------------------------------------------- -->
 
 
 
 
+				<!-- ------------------------------------------------------------------------------------------------- -->
+				<!-- !!!!!!!!!!!!!!!!!!!!!!!!  UPDATE THE TITLES IN THE MAIN.JS !!!!!!!!!!!!!!!!!!!!! -->
+				<!-- ------------------------------------------------------------------------------------------------- -->
 
 			</div>
 		</div>
-
+		<!-- ------------------------------------------------------------------------------------------------- -->
 
 
 
 
 		<hr class="gradient_white">
+
 		<!-- Footer -->
 		<footer id="footer">
 			<div class="inner">
@@ -119,12 +164,15 @@
 
 	</div>
 
-	<!-- ----------------------------------- Update the level with respect to the root with "../../../" ------------------------- -->
 	<!-- Scripts -->
 	<script src="../../assets/js/jquery.min.js"></script>
 	<script src="../../assets/js/browser.min.js"></script>
 	<script src="../../assets/js/breakpoints.min.js"></script>
 	<script src="../../assets/js/util.js"></script>
+
+	<!-- ✅ Ajout du SDK SoundCloud -->
+	<script src="https://w.soundcloud.com/player/api.js"></script>
+
 	<script src="../../assets/js/main.js"></script>
 
 </body>
