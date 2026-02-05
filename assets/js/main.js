@@ -181,8 +181,8 @@
 
 (function() {
     const tracks = [
-		{ title: "Valse Sentimentale", url: "https://w.soundcloud.com/hugo-reymond/shurdas" },
-		{ title: "Valse Sentimentale", url: "https://w.soundcloud.com/hugo-reymond/stradimarius" },
+		{ title: "Shurdas", url: "https://soundcloud.com/hugo-reymond/shurdas" },
+		{ title: "Stradimarius", url: "https://soundcloud.com/hugo-reymond/stradimarius" },
         { title: "Valse Sentimentale", url: "https://soundcloud.com/hugo-reymond/valse-sentimentale" },
         { title: "Medley Roumain", url: "https://soundcloud.com/hugo-reymond/medley-roumain" },
         { title: "Bossa Dorado", url: "https://soundcloud.com/hugo-reymond/bossa-dorado" },
@@ -193,7 +193,11 @@
         { title: "Tall Ground", url: "https://soundcloud.com/user-342226925/tall-ground-deluxe-cover-by" },
         { title: "Two Bare Feet", url: "https://soundcloud.com/user-342226925/two-bare-feet-katie-melua" },
         { title: "Mustang Sally", url: "https://soundcloud.com/user-342226925/mustang-sally-wilson-pickett" },
-        { title: "Daniel", url: "https://soundcloud.com/user-342226925/daniel-final-session-44100-1" }
+        { title: "Daniel", url: "https://soundcloud.com/user-342226925/daniel-final-session-44100-1" },
+		{ title: "Don't Tell Me Who I'm Gonna Be", url: "https://soundcloud.com/user-309912337/e6007bad-b096-4e2a-9d8b-0ee7ee4c5d8e" },
+		{ title: "Falling Rain", url: "https://soundcloud.com/user-309912337/falling-rain" },
+		{ title: "I Don't Wanna Know", url: "https://soundcloud.com/user-309912337/i-dont-wanna-know" },
+		{ title: "Happiness", url: "https://soundcloud.com/user-309912337/19196180-cd4a-45bf-95c5-94ce26ca5702" }
     ];
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
