@@ -1,0 +1,17 @@
+/*
+ * noscript.css : used ONLY when JavaScript is disabled in the browser
+ * (it is called from a <noscript> tag in main.html).
+ *
+ * Without JavaScript, the "is-preload" class of the <body> is never removed: this file therefore
+ * forces tiles to display normally (without the fade-in animation).
+ * Based on the Phantom template (HTML5 UP).
+ */
+
+/* ─── Tiles: displayed straight away, without animation ─── */
+body.is-preload .tiles article {
+    -moz-transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    opacity: 1;
+}

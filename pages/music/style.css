@@ -1,0 +1,984 @@
+/*
+ * style.css : look of THIS page (folder: pages/music)
+ *
+ * Based on the Phantom template (HTML5 UP). Only the rules used by the main.html of this folder
+ * have been kept; English comments were added.
+ * Pages of the same type therefore start with the same content.
+ *
+ * HOW TO FIND YOUR WAY
+ *  - Each group of rules is introduced by a title "─── … ───": search for it with Ctrl+F.
+ *  - The "Adjustments for screens …" blocks only apply up to a given screen size:
+ *    they are the phone / tablet version of the block just above.
+ *  - When the same selector appears several times, the LAST occurrence wins.
+ *    Settings that became useless (redefined further down by the same selector) were removed:
+ *    you can change a value without a line higher up contradicting it.
+ *  - The short comments on the right of some lines come from the original template.
+ *
+ * CONTENTS
+ *   1. Reset of the browser default styles
+ *   2. HTML5 tags displayed as blocks
+ *   3. Whole page: background, color and font
+ *   4. Form fields: base settings
+ *   5. Text: links and italics
+ *   6. Text: main title (h1)
+ *   7. Text: subtitles (h2 to h6)
+ *   8. Separators: gradient lines <hr>
+ *   9. Bullet lists
+ *   10. Action list ("Send" button)
+ *   11. Form: text fields and message box
+ *   12. Boutons
+ *   13. Tiles: image
+ *   14. Header: space above the logo
+ *   15. Form: basics
+ *   16. Form: field layout
+ *   17. Images (.image class)
+ *   18. Tiles: grid (container)
+ *   19. Tiles: single tile block
+ *   20. Tiles: title and text on hover
+ *   21. Custom ".tile" variant
+ *   22. Tiles: animations (page load, hover, touch)
+ *   23. Header: "Billie&Hugo" logo
+ *   24. Page wrapper (overall container)
+ *   25. Main content area
+ *   26. Footer ("Get in touch" form)
+ *   27. Footer: copyright line
+ *   28. Tiles: decorations switched off
+ *   29. Music pages: SoundCloud audio players
+ *   30. Embedded players / PDF (iframe)
+ *   31. Music page: music player and its buttons
+ *   32. Back button (top left, "Back to …")
+ */
+
+/* Font Awesome icons (shared local copy, in assets/vendor) */
+@import url(../../assets/vendor/css/fontawesome-all.min.css);
+/* "Source Sans Pro" font (Google Fonts) */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900");
+
+/* ─── Reset of the browser default styles ─── */
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+a,
+img,
+i,
+ul,
+li,
+form,
+article,
+footer,
+header,
+section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+/* ─── HTML5 tags displayed as blocks ─── */
+article,
+footer,
+header,
+section {
+    display: block;
+}
+
+/* ─── Whole page: background, color and font ─── */
+body {
+    line-height: 1;
+    -webkit-text-size-adjust: none;
+    -ms-overflow-style: scrollbar;
+    font-size: 16pt;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+/* Adjustments for screens ≤ 1680px */
+@media screen and (max-width: 1680px) {
+    body,
+    input,
+    textarea {
+        font-size: 14pt;
+    }
+}
+
+/* Adjustments for screens ≤ 1280px (laptops) */
+@media screen and (max-width: 1280px) {
+    body,
+    input,
+    textarea {
+        font-size: 12pt;
+    }
+}
+
+/* ─── Form fields: base settings ─── */
+input::-moz-focus-inner {
+    border: 0; padding: 0;
+}
+input,
+textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+
+/* ─── Text: links and italics ─── */
+a {
+    text-decoration: none;
+    color: #585858;
+    border-bottom: dotted 1px rgba(88, 88, 88, 0.5);
+    transition: border-bottom-color 0.2s ease, color 0.2s ease;
+}
+a:hover {
+    border-bottom-color: transparent;
+    color: #00ccff !important;
+}
+i {
+    font-style: italic;
+}
+
+/* ─── Text: main title (h1) ─── */
+h1 {
+    font-size: 2.75em;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.035em;
+}
+
+/* Adjustments for screens ≤ 736px (phones, portrait tablets) */
+@media screen and (max-width: 736px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
+/* Adjustments for screens ≤ 360px (very small phones) */
+@media screen and (max-width: 360px) {
+    h1 {
+        font-size: 1.75em;
+    }
+}
+
+/* ─── Text: subtitles (h2 to h6) ─── */
+h2,
+h3 {
+    font-weight: 900;
+    line-height: 1.5;
+    margin: 0 0 2em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+}
+h2 {
+    font-size: 1.1em;
+}
+h3 {
+    font-size: 1em;
+}
+
+/* Adjustments for screens ≤ 736px (phones, portrait tablets) */
+@media screen and (max-width: 736px) {
+    h2 {
+        font-size: 1em;
+    }
+    h3 {
+        font-size: 0.8em;
+    }
+}
+
+/* ─── Separators: gradient lines <hr> ─── */
+hr.gradient_blue,
+hr.gradient_white {
+    border: none;
+    height: 2px;
+    width: 60%;
+    margin: 30px auto;
+}
+hr.gradient_blue {
+    background: linear-gradient(to right, transparent, #00ccff, transparent);
+}
+hr.gradient_white {
+    background: linear-gradient(to right, transparent, rgb(255, 255, 255), transparent);
+}
+
+/* ─── Bullet lists ─── */
+ul {
+    list-style: disc; margin: 0 0 2em 0; padding-left: 1em;
+}
+ul li {
+    padding-left: 0.5em;
+}
+
+/* ─── Action list ("Send" button) ─── */
+ul.actions {
+    display: flex;
+    cursor: default;
+    list-style: none;
+    margin-left: -1em;
+    padding-left: 0;
+}
+ul.actions li {
+    padding: 0 0 0 1em; vertical-align: middle;
+}
+
+/* Adjustments for screens ≤ 480px (small phones) */
+@media screen and (max-width: 480px) {
+    ul.actions:not(.fixed) {
+        flex-direction: column;
+        margin-left: 0;
+        width: 100% !important;
+    }
+    ul.actions:not(.fixed) li {
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 1em 0 0 0;
+        text-align: center;
+        width: 100%;
+    }
+    ul.actions:not(.fixed) li > * {
+        width: 100%;
+    }
+    ul.actions:not(.fixed) li:first-child {
+        padding-top: 0;
+    }
+    ul.actions:not(.fixed) li input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Adjustments for screens ≤ 480px (small phones) */
+@media screen and (max-width: 480px) {
+    form > .fields,
+    form > .fields > .field,
+    form > .fields > .field.half {
+        width: calc(100% - 1.5em);
+        margin: -1.5em 0 2em -1.5em;
+        padding: 1.5em 0 0 1.5em;
+    }
+}
+
+/* ─── Form: text fields and message box ─── */
+input[type="text"],
+input[type="email"],
+textarea {
+    font-size: 1em;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+input:focus,
+textarea:focus {
+    color: #000000; /* dark text while typing */
+}
+input::placeholder,
+textarea::placeholder {
+    color: #aaaaaa;
+    opacity: 1;
+}
+textarea {
+    padding-top: 0.5em;
+}
+input[type="text"]:invalid,
+input[type="email"]:invalid,
+textarea:invalid {
+    box-shadow: none;
+}
+
+/* ─── Boutons ─── */
+input:hover,
+button:hover {
+    color: #00ccff !important;
+    box-shadow: inset 0 0 0 2px #00ccff;
+}
+input:active,
+button:active {
+    background-color: rgba(242, 132, 158, 0.1);
+}
+input.primary {
+    box-shadow: none;
+    background-color: #585858;
+    color: #ffffff !important;
+}
+input.primary:hover {
+    background-color: #00ccff;
+}
+input.primary:active {
+    background-color: #00ccff;
+}
+input:disabled,
+button:disabled {
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+/* ─── Tiles: image ─── */
+.tiles article > .image:before,
+.tiles article > .image:after {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── Header: space above the logo ─── */
+#header {
+    padding: 8em 0 0.1em 0; /* Top padding large, bottom almost none */
+}
+
+/* ─── Form: basics ─── */
+form {
+    margin: 0 0 2em 0;
+    overflow-x: hidden;
+}
+form > :last-child {
+    margin-bottom: 0; /* Remove bottom margin for last element */
+}
+
+/* ─── Form: field layout ─── */
+form > .fields {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 3em);
+    margin: -1.5em 0 2em -1.5em;
+}
+form > .fields > .field {
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 1.5em 0 0 1.5em;
+    width: calc(100% - 1.5em);
+}
+form > .fields > .field.half {
+    width: calc(50% - 0.75em); /* Half-width field */
+}
+
+/* Adjustments for screens ≤ 480px (small phones) */
+@media screen and (max-width: 480px) {
+    form > .fields > .field.half {
+        width: calc(100% - 1.5em); /* Full-width fields on small screens */
+    }
+}
+
+/* ─── Form: text fields and message box ─── */
+input[type="text"],
+input[type="email"],
+textarea {
+    appearance: none; /* Remove default styling */
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    border-bottom: solid 1px #c9c9c9;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0;
+    text-decoration: none;
+    width: 100%;
+}
+input:invalid,
+textarea:invalid {
+    box-shadow: none; /* Remove invalid shadow */
+}
+input:focus,
+textarea:focus {
+    border-bottom-color: #00ccff; /* Focus bottom border */
+    box-shadow: inset 0 -1px 0 0 #00ccff;
+}
+input[type="text"],
+input[type="email"] {
+    height: 3em;
+}
+textarea {
+    padding: 0;
+    min-height: 3.75em;
+}
+
+/* ─── Images (.image class) ─── */
+.image {
+    border-radius: 4px;
+    border: 0;
+    display: inline-block;
+    position: relative;
+}
+.image img {
+    border-radius: 4px;
+    display: block;
+}
+
+/* ─── Boutons ─── */
+input[type="submit"],
+button {
+    appearance: none;
+    transition: background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 0;
+    box-shadow: inset 0 0 0 2px #585858;
+    color: #585858 !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 900;
+    height: 3.5em;
+    letter-spacing: 0.35em;
+    line-height: 3.45em;
+    overflow: hidden;
+    padding: 0 1.25em 0 1.6em;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* ─── Tiles: grid (container) ─── */
+.tiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin: -2.5em 0 0 -2.5em;
+}
+
+/* ─── Tiles: single tile block ─── */
+.tiles article {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative;
+    width: calc(33.33333% - 2.5em);
+    margin: 2.5em 0 0 2.5em;
+}
+
+/* ─── Tiles: image ─── */
+.tiles article > .image {
+    transition: transform 0.5s ease;
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.tiles article > .image img {
+    display: block;
+    width: 100%;
+}
+.tiles article > .image:before {
+    pointer-events: none;
+    transition: background-color 0.5s ease, opacity 0.5s ease;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 1;
+}
+.tiles article > .image:after {
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,...");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.25;
+    z-index: 2;
+}
+
+/* ─── Tiles: title and text on hover ─── */
+.tiles article > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    border-radius: 4px;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    z-index: 3;
+}
+.tiles article > a > :last-child {
+    margin: 0;
+}
+.tiles article > a:hover {
+    color: #ffffff !important;
+}
+.tiles article > a h2 {
+    margin: 0;
+}
+
+/* ─── Custom ".tile" variant ─── */
+.tile {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+}
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.tile:hover {
+    transform: scale(1.1); /* Enlarge tile on hover */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+.tile:active {
+    transform: scale(0.85); /* Shrink tile on click */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.8);
+}
+.tile:hover img {
+    transform: scale(1.1); /* Scale image inside tile */
+}
+
+/* ─── Tiles: animations (page load, hover, touch) ─── */
+body:not(.is-touch) .tiles article:hover > .image {
+    transform: scale(1.1);
+}
+body:not(.is-touch) .tiles article:hover > .image:before {
+    background-color: #333333;
+    opacity: 0.35;
+}
+body:not(.is-touch) .tiles article:hover > .image:after {
+    opacity: 0;
+}
+* + .tiles {
+    margin-top: 2em; /* Space above tiles */
+}
+body.is-preload .tiles article {
+    transform: scale(0.9);
+    opacity: 0; /* Hide tiles on preload */
+}
+
+/* Adjustments for screens ≤ 1280px (laptops) */
+@media screen and (max-width: 1280px) {
+    .tiles {
+        margin: -1.25em 0 0 -1.25em;
+    }
+    .tiles article {
+        width: calc(33.33333% - 1.25em);
+        margin: 1.25em 0 0 1.25em;
+    }
+}
+
+/* Adjustments for screens ≤ 980px (tablets) */
+@media screen and (max-width: 980px) {
+    .tiles {
+        margin: -2.5em 0 0 -2.5em;
+    }
+    .tiles article {
+        width: calc(50% - 2.5em);
+        margin: 2.5em 0 0 2.5em;
+    }
+}
+
+/* Adjustments for screens ≤ 736px (phones, portrait tablets) */
+@media screen and (max-width: 736px) {
+    .tiles {
+        margin: -1.25em 0 0 -1.25em;
+    }
+    .tiles article {
+        width: calc(50% - 1.25em);
+        margin: 1.25em 0 0 1.25em;
+    }
+    .tiles article:hover > .image {
+        transform: scale(1.0); /* Remove hover scaling on small screens */
+    }
+}
+
+/* Adjustments for screens ≤ 480px (small phones) */
+@media screen and (max-width: 480px) {
+    .tiles {
+        margin: 0;
+    }
+    .tiles article {
+        width: 100%;
+        margin: 1.25em 0 0 0;
+    }
+}
+
+/* ─── Header: "Billie&Hugo" logo ─── */
+#header .logo {
+    display: block;
+    border-bottom: 0;
+    color: inherit;
+    font-weight: 900;
+    letter-spacing: 0.35em;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scale and color */
+}
+#header .logo > * {
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.3s ease, color 0.3s ease;  /* Smooth transition for all child elements */
+}
+#header .logo .symbol {
+    margin-right: 0.65em;
+}
+#header .logo .symbol img {
+    display: block;
+    width: 2em;
+    height: 2em;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for logo image effects */
+}
+#header .logo:hover {
+    /* Hover effect: slight zoom and blue tint */
+    color: #00ccff; /* soft blue for text */
+    transform: scale(1.05);
+}
+#header .logo:hover .symbol img {
+    transform: scale(1.15);
+    filter: hue-rotate(200deg) saturate(150%); /* blue hue effect on logo image */
+}
+#header .logo:active {
+    /* Click (active) effect: stronger zoom and deeper blue */
+    transform: scale(1.1);
+    color: #00ccff;
+}
+#header .logo:active .symbol img {
+    transform: scale(1.2);
+    filter: hue-rotate(210deg) saturate(180%);
+}
+
+/* Adjustments for screens ≤ 736px (phones, portrait tablets) */
+@media screen and (max-width: 736px) {
+    #header {
+        padding: 4em 0 0.1em 0;
+    }
+}
+
+/* ─── Page wrapper (overall container) ─── */
+#wrapper {
+    transition: opacity 0.45s ease;
+    opacity: 1;
+}
+
+/* ─── Main content area ─── */
+#main {
+    padding: 0em 0 6em 0;
+}
+
+/* Adjustments for screens ≤ 736px (phones, portrait tablets) */
+@media screen and (max-width: 736px) {
+    #main {
+        padding: 0em 0 4em 0;
+    }
+}
+
+/* ─── Footer ("Get in touch" form) ─── */
+#footer {
+    padding: 5em 0 6em 0;
+    background-color: #000000;
+}
+#footer > .inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+#footer > .inner > * > :last-child {
+    margin-bottom: 0;
+}
+#footer > .inner section:nth-child(1) {
+    width: calc(66% - 2.5em);
+    margin-right: 2.5em;
+}
+
+/* ─── Footer: copyright line ─── */
+#footer > .inner .copyright {
+    width: 100%;
+    padding: 0;
+    margin-top: 5em;
+    list-style: none;
+    font-size: 0.8em;
+    color: rgba(125, 125, 125, 0.5);
+}
+#footer > .inner .copyright a {
+    color: inherit;
+}
+#footer > .inner .copyright li {
+    display: inline-block;
+    border-left: solid 1px rgba(88, 88, 88, 0.15);
+    line-height: 1;
+    padding: 0 0 0 1em;
+    margin: 0 0 0 1em;
+}
+#footer > .inner .copyright li:first-child {
+    border-left: 0;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* Adjustments for screens ≤ 1280px (laptops) */
+@media screen and (max-width: 1280px) {
+    #footer {
+        padding: 5em 0 3em 0;
+    }
+    #footer > .inner section:nth-child(1) {
+        width: calc(66% - 1.25em);
+        margin-right: 1.25em;
+    }
+}
+
+/* Adjustments for screens ≤ 980px (tablets) */
+@media screen and (max-width: 980px) {
+    #footer > .inner section:nth-child(1) {
+        width: 66%;
+        margin-right: 0;
+    }
+}
+
+/* Adjustments for screens ≤ 736px (phones, portrait tablets) */
+@media screen and (max-width: 736px) {
+    #footer {
+        padding: 3em 0 1em 0;
+    }
+    #footer > .inner {
+        flex-direction: column;
+    }
+    #footer > .inner section:nth-child(1) {
+        width: 100%;
+        margin: 3em 0 0 0;
+    }
+    #footer > .inner .copyright {
+        margin-top: 3em;
+    }
+}
+
+/* Adjustments for screens ≤ 480px (small phones) */
+@media screen and (max-width: 480px) {
+    #footer > .inner .copyright {
+        margin-top: 3em;
+    }
+    #footer > .inner .copyright li {
+        border-left: 0;
+        padding-left: 0;
+        margin: 0.75em 0 0 0;
+        display: block;
+        line-height: inherit;
+    }
+    #footer > .inner .copyright li:first-child {
+        margin-top: 0;
+    }
+}
+
+/* ─── Page wrapper (overall container) ─── */
+#wrapper > * > .inner {
+    width: 100%;
+    max-width: 68em;
+    margin: 0 auto;
+    padding: 0 2.5em;
+}
+
+/* Adjustments for screens ≤ 736px (phones, portrait tablets) */
+@media screen and (max-width: 736px) {
+    #wrapper > * > .inner {
+        padding: 0 1.25em;
+    }
+}
+
+/* ─── Tiles: single tile block ─── */
+.tiles article {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 50px;
+    background: none !important;
+}
+
+/* ─── Tiles: image ─── */
+.tiles article .image {
+    flex: 1;
+    overflow: hidden;
+}
+.tiles article .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* ─── Tiles: single tile block ─── */
+.tiles article,
+.tiles article * {
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* ─── Tiles: decorations switched off ─── */
+.tiles article::before,
+.tiles article::after {
+    content: none !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* ─── Whole page: background, color and font ─── */
+body {
+    background: #000;
+    background-size: cover;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ─── Text: main title (h1) ─── */
+h1 {
+    margin: 0.2em 0;
+}
+
+/* ─── Music pages: SoundCloud audio players ─── */
+.audio-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* ─── Embedded players / PDF (iframe) ─── */
+iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* ─── Music page: music player and its buttons ─── */
+#music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+#music-player h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.1em;
+    text-align: center;
+}
+#music-controls {
+    display: flex;
+    gap: 15px;
+}
+#music-controls button {
+    background: none;              /* transparent background */
+    color: #ffffff;                /* white icons */
+    border: none;                  /* remove border */
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#music-controls button:hover,
+#music-controls button:active {
+    color: #00ccff;                /* blue on hover/click */
+    transform: scale(1.2);         /* zoom effect */
+}
+#music-controls button {
+    transform-origin: center;
+}
+
+/* ─── Music pages: SoundCloud audio players ─── */
+#player {
+    width: 100%;
+    height: 120px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* ─── Back button (top left, "Back to …") ─── */
+#back-to-menu {
+    position: absolute;
+    top: 80px;   /* adjust vertical distance */
+    left: 20px;  /* adjust horizontal distance */
+    z-index: 2000;
+    background: transparent;       /* transparent background */
+    color: #888888;               /* gray text by default */
+    border: 2px solid #888888;    /* gray border by default */
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif; /* Phantom uses Source Sans Pro */
+    font-weight: 600;             /* similar weight to Phantom headings */
+    font-size: 0.9em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+#back-to-menu:hover {
+    color: #00ccff;
+    border-color: #00ccff;
+    transform: scale(1.1);
+}
+
+/* Adjustments for screens ≤ 768px (tablets) */
+@media (max-width: 768px) {
+    #back-to-menu {
+        top: 70px;
+        left: 15px;
+        font-size: 0.85em;
+        padding: 6px 12px;
+    }
+}
+
+/* Adjustments for screens ≤ 480px (small phones) */
+@media (max-width: 480px) {
+    #back-to-menu {
+        top: 65px;
+        left: 10px;
+        font-size: 0.8em;
+        padding: 5px 10px;
+    }
+}
